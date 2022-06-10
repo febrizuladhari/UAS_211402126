@@ -199,3 +199,33 @@ MariaDB [task_manager]> SELECT
 +------+-----------+-------------+---------------+--------------+-----------------+-----------+-------------+
 3 rows in set (0.001 sec)
 
+MariaDB [task_manager]> CREATE VIEW 211402126
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '211402126' at line 1
+MariaDB [task_manager]> CREATE VIEW 211402126 AS
+    -> CREATE view 211402126 AS
+    -> 
+    -> SELECT 
+    -> 
+    -> a.id,a.task_name,a.task_status,b.category_name,c.indicator_name
+    -> 
+    -> FROM task_plans a
+    -> 
+    -> JOIN task_categories b
+    -> 
+    -> JOIN task_indicators c
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '211402126 AS
+CREATE view 211402126 AS
+
+SELECT 
+
+a.id,a.task_name,a.task_statu...' at line 1
+MariaDB [task_manager]> CREATE VIEW 211402126 AS
+    -> SELECT a.id,a.task_name,a.task_status,b.category_name,c.indicator_name
+    -> FROM task_plans a
+    -> JOIN task_categories b
+    -> JOIN task_indicators c
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '211402126 AS
+SELECT a.id,a.task_name,a.task_status,b.category_name,c.indicato...' at line 1
